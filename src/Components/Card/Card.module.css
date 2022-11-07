@@ -1,0 +1,57 @@
+.card {
+    width: 270px;
+    height: 374px;
+    background: white;
+    padding: .4em;
+    border-radius: 6px;
+  }
+  
+  .cardImage {
+    background-image: url('https://media.istockphoto.com/id/149147012/es/foto/congreso-nacional.jpg?s=612x612&w=0&k=20&c=671EXzBLbyTG1MZYshLP4Fkp78U_RY0wHD6irjEzI0A=');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 60%;
+    border-radius: 6px 6px 0 0;
+  }
+  
+  .card-image:hover {
+    transform: scale(0.98);
+  }
+  
+  .category {
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgb(63, 121, 230);
+    padding: 10px 7px 0;
+  }
+  
+  .category:hover {
+    cursor: pointer;
+  }
+  
+  .heading {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(88, 87, 87);
+    padding: 7px;
+  }
+  
+
+  
+  .author {
+    color: gray;
+    font-weight: 400;
+    font-size: 11px;
+    padding-top: 20px;
+  }
+  
+  .name {
+    font-weight: 600;
+  }
+  
+  .name:hover {
+    cursor: pointer;
+  }
