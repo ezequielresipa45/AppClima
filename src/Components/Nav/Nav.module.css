@@ -1,5 +1,5 @@
 
-.containerNav form{
+.containerNav {
   display: flex;
   gap: 20px;
 }

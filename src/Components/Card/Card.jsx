@@ -18,8 +18,4 @@ export default function Card(props) {
   );
 }
 
-//   ciudad: '',
-//   temperatura:'',
-//   temp_min: '',
-//   temp_max:'',
-//   ciudadInput: '',
+

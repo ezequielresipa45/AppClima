@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <div className={style.header}>
       <Logo />
-      <Nav ciudad = {props.ciudad} handleButon = {props.handleButon} />
+      <Nav handleButon = {props.handleButon} />
       
     </div>
   );
