@@ -10,12 +10,32 @@ export default function CardClima(props) {
     <div className={style.contenedorCardClima}>
 
 
+{   
 
-      <Card 
-      
-      climaData = {props.climaData}
-      
-      />
+props.climaData ? 
+
+props.climaData.map((card) => (
+
+        <Card 
+        key = {card.ciudad}
+        ciudad = {card.ciudad}
+        temperatura = {card.temperatura}
+        temp_max = {card.temp_max}
+        temp_min = {card.temp_min}
+        />
+
+      ) ) : 
+
+
+      <h2 >Ingrese una ciudad en el buscador</h2>
+    
+    
+    
+    }
+
+
+
+
     </div>
   );
 }

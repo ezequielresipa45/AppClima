@@ -1,25 +1,20 @@
 import Header from "./Components/Header/Header.jsx";
 import CardClima from "./Components/CardClima/CardClima.jsx";
 import "./App.css";
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import axios from 'axios';
 
-
+let arreglo = [];
 
 function App() {
-
   
 
 
-  const [clima, setClima] = useState({
-    ciudad: '',
-    temperatura:'',
-    temp_min: '',
-    temp_max:'',
-    ciudadInput: '',
-  });
+  const [guardador, setGuardador] = useState()
 
-  const [cajaClimas, setCajaClimas] = useState([])
+ 
+
+  const [clima, setClima] = useState([]);
 
   const obtenerCiudad = (e)=> {
 
@@ -32,27 +27,31 @@ function App() {
    
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
 
     axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${clima.ciudadInput}&appid=4ae2636d8dfbdc3044bede63951a019b&units=metric`
     )
     .then((resp) => {
-      // console.log(resp.data);
-       setClima({...clima, ciudad: resp.data.name, temperatura: resp.data.main.temp, temp_min:resp.data.main.temp_min, temp_max:resp.data.main.temp_max   });
+if(resp.data){
 
+  let ciudad = {ciudad: resp.data.name, temperatura: resp.data.main.temp, temp_min:resp.data.main.temp_min, temp_max:resp.data.main.temp_max}
+         
+  
+  arreglo.push(ciudad);
+  setGuardador(arreglo)
+  
 
+}
 
-       
-      });
-      
-      setCajaClimas(cajaClimas.push({...clima}));
-    
+});
+
   };
   
+
+
   
-  console.log(cajaClimas);
+  
 
 
 
@@ -70,7 +69,7 @@ function App() {
 
 
       <CardClima
-      climaData = {clima}
+      climaData = {guardador}
       />
     </div>
   );
